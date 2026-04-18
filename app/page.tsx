@@ -4,10 +4,10 @@ import Countdown from './Countdown';
 // 1. COMPONENTE: NAVBAR (Actualizado con Reservas y Teléfono)
 function Navbar() {
   const navItems = [
-    { name: 'Quiénes Somos', href: '#quienes-somos' },
-    { name: 'Nuestra Historia', href: '#historia' },
-    { name: 'Explorar Carta', href: '#menu' },
-    { name: 'Redes Sociales', href: '#redes' },
+    { name: '| Quiénes Somos- |', href: '#quienes-somos' },
+    { name: '| Nuestra Historia |', href: '#historia' },
+    { name: '| Explorar Carta |', href: '#menu' },
+    { name: '| Redes Sociales |', href: '#redes' },
     { name: 'Reservas', href: 'tel:+34695232391', isAction: true }, // Nueva opción
   ];
 
