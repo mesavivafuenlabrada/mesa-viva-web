@@ -7,7 +7,7 @@ function Navbar() {
     { name: '| Nuestra Historia ', href: '#historia' },
     { name: '| Explorar Carta ', href: '#menu' },
     { name: '| Redes Sociales |', href: '#redes' },
-    { name: ' Reservas ', href: 'tel:+34695232391', isAction: true },
+    { name: ' Reservas |', href: 'tel:+34695232391', isAction: true },
   ];
 
   return (
@@ -43,14 +43,14 @@ function Header() {
   );
 }
 
-// 3. NUEVO COMPONENTE: REDES SOCIALES VERTICALES (Sustituye al Countdown)
-function RedesVerticales() {
+// 3. COMPONENTE: REDES SOCIALES HORIZONTALES (CÁPSULAS)
+function RedesHorizontales() {
   const socialLinks = [
     {
       name: 'Instagram',
       href: 'https://www.instagram.com/mesa_viva_fuenlabrada/',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
       ),
       label: '@mesa_viva_fuenlabrada'
     },
@@ -58,7 +58,7 @@ function RedesVerticales() {
       name: 'TikTok',
       href: 'https://www.tiktok.com/@mesa_viva_fuenlabrada?lang=es',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
       ),
       label: '@mesa_viva_fuenlabrada'
     },
@@ -66,30 +66,30 @@ function RedesVerticales() {
       name: 'Email',
       href: 'mailto:mesavivafuenlabrada@gmail.com',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
       ),
-      label: 'mesavivafuenlabrada@gmail.com'
+      label: 'mesaviva@gmail.com'
     }
   ];
 
   return (
-    <div className="flex flex-col gap-5 w-full max-w-[340px] mx-auto">
+    <div className="flex flex-wrap justify-center gap-4 md:gap-6 w-full max-w-6xl mx-auto px-4">
       {socialLinks.map((social) => (
         <a
           key={social.name}
           href={social.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-5 px-6 py-4 bg-white/[0.03] border border-white/20 rounded-full hover:border-[#f47920]/50 hover:bg-white/[0.06] transition-all duration-500 no-underline !text-white"
+          className="group flex items-center gap-4 px-5 py-3 bg-white/[0.03] border border-white/10 rounded-full hover:border-[#f47920]/50 transition-all duration-300 no-underline !text-white flex-shrink-0"
         >
-          <div className="text-white group-hover:text-[#f47920] transition-colors duration-300">
+          <div className="text-white group-hover:text-[#f47920] transition-colors">
             {social.icon}
           </div>
-          <div className="flex flex-col items-start leading-tight">
-            <span className="text-[9px] uppercase tracking-[0.3em] font-black text-[#f47920] mb-1">
+          <div className="flex flex-col items-start text-left">
+            <span className="text-[8px] uppercase tracking-[0.2em] font-black text-[#f47920]">
               {social.name}
             </span>
-            <span className="text-[13px] font-medium text-white/90 italic group-hover:text-white transition-colors">
+            <span className="text-[11px] font-medium text-white italic opacity-80 group-hover:opacity-100">
               {social.label}
             </span>
           </div>
@@ -99,7 +99,7 @@ function RedesVerticales() {
   );
 }
 
-// 4. SECCIONES DE CONTENIDO (Quiénes Somos, Historia, Carta)
+// 4. SECCIÓN: QUIÉNES SOMOS
 function QuienesSomosSection() {
   return (
     <section id="quienes-somos" className="relative bg-[#0a0a0a] py-32 px-6 border-t border-white/5">
@@ -109,17 +109,19 @@ function QuienesSomosSection() {
           <h2 className="font-mesa italic text-5xl md:text-7xl text-white">Quiénes Somos</h2>
           <div className="h-[1px] w-20 bg-[#f47920]/40 mx-auto mt-8"></div>
         </header>
-        <div className="space-y-20 text-white/80 leading-relaxed text-lg font-light">
-          <article className="max-w-2xl mx-auto">
-            <p className="text-xl text-white font-medium mb-4 italic">"No somos un bar cualquiera. Somos tu Mesa Viva."</p>
-            <p>Mesa Viva nace de un sueño, pero se sostiene de una idea muy sencilla: que cada persona que cruza nuestra puerta se sienta en casa.</p>
-          </article>
+        <div className="space-y-12 text-white/80 leading-relaxed text-lg font-light">
+          <p className="text-xl text-white font-medium italic">"No somos un bar cualquiera. Somos tu Mesa Viva."</p>
+          <p className="max-w-2xl mx-auto">
+            Mesa Viva nace de un sueño para que cada persona se sienta en casa. 
+            Traemos los toques latinos que saben a fiesta abrazando la comida española que nos acogió.
+          </p>
         </div>
       </div>
     </section>
   );
 }
 
+// 5. SECCIÓN: NUESTRA HISTORIA
 function HistoriaSection() {
   return (
     <section id="historia" className="relative bg-[#0a0a0a] py-32 px-6 border-t border-white/5">
@@ -129,14 +131,16 @@ function HistoriaSection() {
           <h2 className="font-mesa italic text-5xl md:text-7xl text-white">Nuestra Historia</h2>
           <div className="h-[1px] w-20 bg-[#f47920]/40 mx-auto mt-8"></div>
         </header>
-        <div className="max-w-2xl mx-auto text-white/80 font-light leading-relaxed">
-          <p>Traemos los <span className="text-white italic">toques latinos</span> que saben a fiesta, abrazando la cocina española que nos acogió. Mesa Viva es el sueño que tuve en un bus y que ahora comparto contigo.</p>
-        </div>
+        <p className="max-w-2xl mx-auto text-white/80 font-light">
+          Mesa Viva es un sueño que tuve en un bus. Llegué a España siendo ayudante de cocina, 
+          y ahora quiero brindarte mi historia en cada bocado.
+        </p>
       </div>
     </section>
   );
 }
 
+// 6. SECCIÓN: CARTA (CON CÓDIGO QR RESTAURADO)
 function CartaSection() {
   return (
     <section id="menu" className="relative bg-[#0a0a0a] py-32 px-6 border-t border-white/5">
@@ -144,23 +148,40 @@ function CartaSection() {
         <header className="mb-20">
           <p className="text-[#f47920] text-sm md:text-lg uppercase tracking-[0.6em] mb-4 font-black">Explora</p>
           <h2 className="font-mesa italic text-5xl md:text-7xl text-white">Nuestra Carta</h2>
+          <div className="h-[1px] w-20 bg-[#f47920]/40 mx-auto mt-8"></div>
         </header>
-        <div className="bg-white/[0.03] p-10 md:p-20 rounded-sm border border-white/10 backdrop-blur-md max-w-3xl mx-auto">
+        
+        <div className="bg-white/[0.03] p-10 md:p-20 rounded-sm border border-white/10 backdrop-blur-md max-w-3xl mx-auto shadow-2xl">
+          <h3 className="font-mesa italic text-2xl md:text-4xl text-white mb-8">"Sabores que cuentan una historia"</h3>
+          
           <a 
             href="https://buscarmenu.es/menu/barmesaviva/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block bg-[#f47920] text-white px-12 py-5 rounded-full uppercase tracking-[0.2em] font-bold text-[13px] hover:bg-white hover:text-black transition-all duration-500 no-underline"
+            className="inline-block w-full md:w-auto bg-[#f47920] text-white px-12 py-5 rounded-full uppercase tracking-[0.2em] font-bold text-[13px] hover:bg-white hover:text-black transition-all duration-500 shadow-xl no-underline mb-16"
           >
             Abrir Carta Digital
           </a>
+
+          <div className="flex flex-col items-center gap-8">
+            <div className="bg-white p-3 rounded-sm shadow-2xl">
+              <img 
+                src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://buscarmenu.es/menu/barmesaviva/" 
+                alt="QR Carta Mesa Viva" 
+                className="w-32 h-32"
+              />
+            </div>
+            <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40">
+              Escanea para ver el menú en tu móvil
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-// 5. COMPONENTE PRINCIPAL (HOME)
+// 7. COMPONENTE PRINCIPAL
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#f47920]/30 overflow-x-hidden">
@@ -171,10 +192,7 @@ export default function Home() {
         .font-mesa { font-family: 'Playfair Display', serif; }
         .font-viva { font-family: 'Dancing Script', cursive; }
 
-        a, a:visited, a:hover, a:active {
-          text-decoration: none !important;
-          color: inherit;
-        }
+        a, a:visited, a:hover, a:active { text-decoration: none !important; color: inherit; }
 
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
@@ -185,11 +203,10 @@ export default function Home() {
 
       <Header />
 
-      {/* SECCIÓN HERO ACTUALIZADA */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4">
+      {/* SECCIÓN HERO (TÍTULO + REDES HORIZONTALES) */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 px-4 pb-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(244,121,32,0.05)_0%,transparent_70%)] pointer-events-none"></div>
         
-        {/* Logo */}
         <div className="relative flex flex-col items-center mb-16 md:mb-24 animate-fade">
           <h1 className="font-mesa text-white text-[clamp(4rem,16vw,12rem)] font-bold tracking-tighter leading-none text-center">
             Mesa
@@ -199,12 +216,11 @@ export default function Home() {
           </h2>
         </div>
 
-        {/* Bloque de Redes Sociales Verticales */}
-        <div className="flex flex-col items-center animate-fade [animation-delay:400ms] w-full">
-          <h3 className="font-mesa italic text-white text-3xl md:text-5xl mb-12 drop-shadow-lg text-center">
+        <div className="flex flex-col items-center animate-fade [animation-delay:400ms] text-center w-full">
+          <h3 className="font-mesa italic text-white text-3xl md:text-5xl mb-12 drop-shadow-lg font-bold">
             Síguenos en Mesa Viva
           </h3>
-          <RedesVerticales />
+          <RedesHorizontales />
         </div>
       </section>
 
