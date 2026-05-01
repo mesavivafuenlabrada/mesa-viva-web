@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 // 1. COMPONENTE: NAVBAR
@@ -7,7 +8,7 @@ function Navbar() {
     { name: '| Nuestra Historia ', href: '#historia' },
     { name: '| Explorar Carta ', href: '#menu' },
     { name: '| Redes Sociales |', href: '#redes' },
-    { name: ' Reservas |', href: 'tel:+34695232391', isAction: true },
+    { name: ' Reservas ', href: 'tel:+34695232391', isAction: true },
   ];
 
   return (
@@ -43,9 +44,17 @@ function Header() {
   );
 }
 
-// 3. COMPONENTE: REDES SOCIALES HORIZONTALES (CÁPSULAS)
+// 3. COMPONENTE: REDES SOCIALES HORIZONTALES (INCLUYE WHATSAPP)
 function RedesHorizontales() {
   const socialLinks = [
+    {
+      name: 'WhatsApp',
+      href: 'https://wa.me/34695232391', // Enlace directo con código de país
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.3 8.38 8.38 0 0 1 3.8.9L21 3.5Z"/></svg>
+      ),
+      label: '+34 695 23 23 91'
+    },
     {
       name: 'Instagram',
       href: 'https://www.instagram.com/mesa_viva_fuenlabrada/',
@@ -73,7 +82,7 @@ function RedesHorizontales() {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 md:gap-6 w-full max-w-6xl mx-auto px-4">
+    <div className="flex flex-wrap justify-center gap-3 md:gap-5 w-full max-w-[1400px] mx-auto px-4">
       {socialLinks.map((social) => (
         <a
           key={social.name}
@@ -85,7 +94,7 @@ function RedesHorizontales() {
           <div className="text-white group-hover:text-[#f47920] transition-colors">
             {social.icon}
           </div>
-          <div className="flex flex-col items-start text-left">
+          <div className="flex flex-col items-start text-left leading-tight">
             <span className="text-[8px] uppercase tracking-[0.2em] font-black text-[#f47920]">
               {social.name}
             </span>
@@ -140,7 +149,7 @@ function HistoriaSection() {
   );
 }
 
-// 6. SECCIÓN: CARTA (CON CÓDIGO QR RESTAURADO)
+// 6. SECCIÓN: CARTA (CON CÓDIGO QR)
 function CartaSection() {
   return (
     <section id="menu" className="relative bg-[#0a0a0a] py-32 px-6 border-t border-white/5">
@@ -203,11 +212,11 @@ export default function Home() {
 
       <Header />
 
-      {/* SECCIÓN HERO (TÍTULO + REDES HORIZONTALES) */}
+      {/* SECCIÓN HERO */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 px-4 pb-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(244,121,32,0.05)_0%,transparent_70%)] pointer-events-none"></div>
         
-        <div className="relative flex flex-col items-center mb-16 md:mb-24 animate-fade">
+        <div className="relative flex flex-col items-center mb-16 md:mb-20 animate-fade">
           <h1 className="font-mesa text-white text-[clamp(4rem,16vw,12rem)] font-bold tracking-tighter leading-none text-center">
             Mesa
           </h1>
@@ -216,7 +225,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="flex flex-col items-center animate-fade [animation-delay:400ms] text-center w-full">
+        <div id="redes" className="flex flex-col items-center animate-fade [animation-delay:400ms] text-center w-full">
           <h3 className="font-mesa italic text-white text-3xl md:text-5xl mb-12 drop-shadow-lg font-bold">
             Síguenos en Mesa Viva
           </h3>
