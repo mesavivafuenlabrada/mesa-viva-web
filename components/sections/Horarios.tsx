@@ -1,11 +1,11 @@
 const schedule = [
   { day: 'Lunes', hours: 'Cerrado' },
-  { day: 'Martes', hours: '18:00 - 00:00' },
-  { day: 'Miércoles', hours: '18:00 - 00:00' },
-  { day: 'Jueves', hours: '18:00 - 00:00' },
-  { day: 'Viernes', hours: '18:00 - 02:00' },
-  { day: 'Sábado', hours: '12:00 - 02:00' },
-  { day: 'Domingo', hours: '12:00 - 00:00' },
+  { day: 'Martes', hours: '08:00 - 23:00' },
+  { day: 'Miércoles', hours: '08:00 - 23:00' },
+  { day: 'Jueves', hours: '08:00 - 23:00' },
+  { day: 'Viernes', hours: '08:00 - 23:00' },
+  { day: 'Sábado', hours: '08:00 - 03:00' },
+  { day: 'Domingo', hours: '08:00 - 03:00' },
 ];
 
 export default function Horarios() {
