@@ -1,23 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --background: #0d0d0d; 
-  --foreground: #ffffff;
-  --accent-gold: #c5a059;
-  --accent-gold-hover: #e0bb7a;
+@theme {
+  --color-primary: #f47920;
+  --color-primary-light: #ff943d;
+  --color-primary-dark: #d46512;
+  --color-bg: #0a0a0a;
+  --color-bg-alt: #050505;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  background-color: var(--color-bg);
+  color: #ffffff;
   overflow-x: hidden;
-}
-
-/* Para que los títulos se vean limpios */
-h1, h2, h3 {
-  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
-  font-weight: 300;
 }
